@@ -1,0 +1,10 @@
+```
+# Logs
+*.log
+
+# Environment
+.env.local
+
+# Editors
+.vscode/
+```
