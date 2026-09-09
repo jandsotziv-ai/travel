@@ -146,6 +146,8 @@ nav a:hover::after {
 /* Hero */
 .hero {
     position: relative;
+    width: 100%;
+    max-width: 100%;
     background-image: url('../images/back-map.png');
     background-size: cover;
     background-position: center;
