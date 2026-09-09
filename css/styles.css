@@ -737,3 +737,121 @@ footer {
         justify-content: center;
     }
 }
+
+
+
+
+
+/* Гарантируем видимость сетки программ */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Стили для самой карточки */
+.program-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Изображение внутри карточки */
+.program-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Контент внутри карточки */
+.program-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.program-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+/* Мета-информация (даты, место) */
+.program-meta {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.program-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.program-meta-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: #3498db;
+}
+
+/* Цена */
+.program-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+/* Кнопка */
+.program-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.program-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Заголовки регионов */
+.region-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 40px 0 20px;
+    color: #2c3e50;
+    text-align: left;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+}
+
+/* Исправление для reveal, если он скрывает контент */
+.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: none !important;
+}
