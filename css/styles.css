@@ -146,10 +146,17 @@ nav a:hover::after {
 /* Hero */
 .hero {
     position: relative;
+    background-image: url('../images/back-map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
 }
 
 .hero-map-bg {
