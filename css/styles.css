@@ -750,8 +750,6 @@ footer {
     width: 100%;
     margin-bottom: 40px;
 }
-
-
 /* Исправление для reveal, если он скрывает контент */
 .reveal {
     opacity: 1;
@@ -761,197 +759,85 @@ footer {
 
 
 
-.masonry-gallery {
-    column-count: 4; /* Количество колонок */
-    column-gap: 16px; /* Расстояние между колонками */
+/* --- Новая горизонтальная галерея --- */
+#gallery {
+    padding-top: 80px; /* Отступ от заголовка */
+    padding-bottom: 80px;
+    overflow: hidden; /* Чтобы скролл не вылезал за пределы */
 }
 
-.masonry-item {
-    position: relative;
-    margin-bottom: 16px; /* Отступ снизу между элементами */
-    break-inside: avoid; /* Запрет разрыва элемента между колонками */
-    border-radius: 16px;
+.gallery-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 40px; /* Отступы по бокам */
+    cursor: grab;
+    -ms-overflow-style: none;  /* Скрыть скроллбар в IE/Edge */
+    scrollbar-width: none;  /* Скрыть скроллбар в Firefox */
+}
+
+.gallery-scroll-container::-webkit-scrollbar {
+    display: none; /* Скрыть скроллбар в Chrome/Safari */
+}
+
+.gallery-scroll-container:active {
+    cursor: grabbing;
+}
+
+.gallery-item {
+    flex: 0 0 auto; /* Не сжимать элементы */
+    width: 500px;   /* Ширина фото */
+    height: 600px;  /* Высота фото */
+    border-radius: 20px;
     overflow: hidden;
-    cursor: pointer;
-    background: #f0f0f0; /* Цвет заглушки пока грузится фото */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.masonry-item img {
+.gallery-item img {
     width: 100%;
-    height: auto; /* Высота подстраивается автоматически под пропорции фото */
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Эффект при наведении */
-.masonry-item:hover img {
+.gallery-item:hover img {
     transform: scale(1.05);
 }
 
 /* Затемнение и текст при наведении */
 .gallery-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
     display: flex;
     align-items: flex-end;
-    padding: 20px;
-    pointer-events: none;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.masonry-item:hover .gallery-overlay {
+.gallery-item:hover .gallery-overlay {
     opacity: 1;
 }
 
 .gallery-overlay span {
     color: white;
+    font-size: 20px;
     font-weight: 600;
-    font-size: 15px;
-    transform: translateY(10px);
-    transition: transform 0.3s ease;
-}
-
-.masonry-item:hover .gallery-overlay span {
-    transform: translateY(0);
-}
-
-/* Адаптивность для планшетов и мобильных */
-@media (max-width: 1024px) {
-    .masonry-gallery {
-        column-count: 3;
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-gallery {
-        column-count: 2;
-        column-gap: 12px;
-    }
-    
-    .masonry-item {
-        margin-bottom: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .masonry-gallery {
-        column-count: 1; /* На очень маленьких экранах - одна колонка */
-    }
-}
-
-/* --- Горизонтальная галерея на всю ширину --- */
-
-.full-width-gallery {
-    max-width: 100% !important; /* Растягиваем на всю ширину */
-    padding: 80px 0 40px;       /* Отступы только сверху и снизу */
-    background: #fff;
-    overflow: hidden;           /* Скрываем все, что вылезает за края */
-}
-
-.gallery-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 0 20px;
-}
-
-.gallery-header h2 {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text);
-}
-
-.gallery-header p {
-    color: var(--text-secondary);
-    font-size: 16px;
-}
-
-/* Контейнер скролла */
-.gallery-scroll-container {
-    width: 100%;
-    overflow-x: auto;           /* Включаем горизонтальный скролл */
-    scroll-behavior: smooth;    /* Плавная прокрутка */
-    padding: 0 40px;            /* Отступы по краям, чтобы первое фото не прилипало */
-    
-    /* Скрываем полосу прокрутки для красоты */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.gallery-scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-
-/* Трек с фотографиями */
-.gallery-track {
-    display: flex;
-    gap: 20px;                  /* Расстояние между фото */
-    width: max-content;         /* Ширина по содержимому */
-    cursor: grab;               /* Курсор "рука" */
-}
-
-.gallery-track:active {
-    cursor: grabbing;
-}
-
-/* Карточка фото */
-.gallery-item-large {
-    position: relative;
-    width: 500px;               /* Ширина фото (можно менять) */
-    height: 600px;              /* Высота фото (крупно) */
-    border-radius: 20px;
-    overflow: hidden;
-    flex-shrink: 0;             /* Запрещаем сжиматься */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item-large img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* Заполняет блок, обрезая лишнее */
-    transition: transform 0.5s ease;
-}
-
-/* Эффект при наведении */
-.gallery-item-large:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-item-large:hover img {
-    transform: scale(1.05);
-}
-
-/* Подпись */
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-.gallery-item-large:hover .gallery-caption {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Адаптив для мобильных */
 @media (max-width: 768px) {
-    .gallery-item-large {
-        width: 85vw;            /* На телефоне фото чуть меньше экрана */
-        height: 50vh;
+    .gallery-item {
+        width: 85vw; /* На телефоне фото чуть меньше ширины экрана */
+        height: 500px;
     }
     .gallery-scroll-container {
-        padding: 0 20px;
+        padding: 20px;
     }
 }
