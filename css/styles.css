@@ -222,6 +222,7 @@ nav a:hover::after {
 }
 
 .hero h1 {
+    color: var(--dark-blue);
     font-size: 52px;
     line-height: 1.15;
     font-weight: 700;
