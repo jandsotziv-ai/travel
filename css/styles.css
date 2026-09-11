@@ -52,6 +52,20 @@ header {
     justify-content: space-between;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.header-inner .logo-img {
+    height: 40px; 
+}
+
+.footer-brand .logo-img {
+    height: 50px;
+}
+
 .logo {
     display: flex;
     align-items: center;
