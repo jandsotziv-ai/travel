@@ -265,7 +265,17 @@
             <h2>Фотогалерея</h2>
             <p>Яркие моменты из наших поездок от Омска до Китая</p>
         </div>
+<!-- Кнопки навигации -->
+<button class="gallery-nav prev" id="galleryPrev" aria-label="Прокрутить влево">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<button class="gallery-nav next" id="galleryNext" aria-label="Прокрутить вправо">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
 
+<div class="gallery-scroll-wrapper">
+    <!-- ... ваш существующий код с .gallery-track ... -->
+</div>
         <!-- Контейнер для скролла -->
         <div class="gallery-scroll-wrapper">
             <div class="gallery-track" id="galleryTrack">
