@@ -522,7 +522,7 @@ section {
 
 /* Footer */
 footer {
-    background: var(--dark-blue);
+    background: #09275F;
     color: white;
     padding: 80px 40px 40px;
 }
