@@ -58,35 +58,36 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Скрипт для перетаскивания галереи мышкой
-const slider = document.querySelector('.gallery-scroll-container');
-let isDown = false;
-let startX;
-let scrollLeft;
+// Скрипт для перетаскивания галереи мышью
+const galleryContainer = document.getElementById('galleryContainer');
 
-if (slider) {
-    slider.addEventListener('mousedown', (e) => {
+if (galleryContainer) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    galleryContainer.addEventListener('mousedown', (e) => {
         isDown = true;
-        slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
+        galleryContainer.classList.add('active');
+        startX = e.pageX - galleryContainer.offsetLeft;
+        scrollLeft = galleryContainer.scrollLeft;
     });
 
-    slider.addEventListener('mouseleave', () => {
+    galleryContainer.addEventListener('mouseleave', () => {
         isDown = false;
-        slider.classList.remove('active');
+        galleryContainer.classList.remove('active');
     });
 
-    slider.addEventListener('mouseup', () => {
+    galleryContainer.addEventListener('mouseup', () => {
         isDown = false;
-        slider.classList.remove('active');
+        galleryContainer.classList.remove('active');
     });
 
-    slider.addEventListener('mousemove', (e) => {
+    galleryContainer.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Скорость скролла
-        slider.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - galleryContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Скорость прокрутки
+        galleryContainer.scrollLeft = scrollLeft - walk;
     });
 }
