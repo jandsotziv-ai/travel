@@ -597,15 +597,17 @@ footer {
 }
 
 .footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(255,255,255,0.1);
     border-radius: 50%;
-    color: white;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;      /* Центрирование по вертикали */
+    justify-content: center;  /* Центрирование по горизонтали */
     transition: var(--transition);
+    color: white;             /* Цвет иконки */
+    font-size: 18px;          /* Размер иконки */
+    text-decoration: none;
 }
 
 .footer-social a:hover {
