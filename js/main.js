@@ -58,36 +58,41 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Скрипт для перетаскивания галереи мышью
-const galleryContainer = document.getElementById('galleryContainer');
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.gallery-scroll-wrapper');
+    
+    if (slider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-if (galleryContainer) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
 
-    galleryContainer.addEventListener('mousedown', (e) => {
-        isDown = true;
-        galleryContainer.classList.add('active');
-        startX = e.pageX - galleryContainer.offsetLeft;
-        scrollLeft = galleryContainer.scrollLeft;
-    });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
 
-    galleryContainer.addEventListener('mouseleave', () => {
-        isDown = false;
-        galleryContainer.classList.remove('active');
-    });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
 
-    galleryContainer.addEventListener('mouseup', () => {
-        isDown = false;
-        galleryContainer.classList.remove('active');
-    });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Скорость скролла
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    }
 
-    galleryContainer.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - galleryContainer.offsetLeft;
-        const walk = (x - startX) * 2; // Скорость прокрутки
-        galleryContainer.scrollLeft = scrollLeft - walk;
-    });
-}
+    // Остальной код (анимация при скролле и т.д.) можно оставить ниже, если он там есть
+    const reveals = document.querySelectorAll('.reveal');
+    // ... (ваш существующий код для reveal)
+});
