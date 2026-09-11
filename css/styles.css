@@ -763,32 +763,33 @@ footer {
     font-size: 16px;
 }
 
-
 .gallery-scroll-wrapper {
     width: 100%;
-    overflow-x: auto; /* Включает горизонтальный скролл */
+    overflow-x: auto;
     overflow-y: hidden;
-    padding: 20px 40px; /* Отступы по краям */
-    cursor: grab; /* Курсор "рука" */
+    padding: 20px 40px;
+    cursor: grab;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Плавность на iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 .gallery-scroll-wrapper:active {
     cursor: grabbing;
 }
 
-/* Скрываем полосу прокрутки для красоты */
 .gallery-scroll-wrapper::-webkit-scrollbar {
     height: 8px;
 }
+
 .gallery-scroll-wrapper::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
+
 .gallery-scroll-wrapper::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 4px;
 }
+
 .gallery-scroll-wrapper::-webkit-scrollbar-thumb:hover {
     background: #aaa;
 }
@@ -796,7 +797,7 @@ footer {
 .gallery-track {
     display: flex;
     gap: 20px;
-    width: max-content; /* Растягивает контейнер по содержимому */
+    width: max-content;
     margin: 0 auto;
 }
 
@@ -804,13 +805,12 @@ footer {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    flex-shrink: 0; /* Запрещает сжатие элементов */
+    flex-shrink: 0;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-/* Размеры фото */
 .gallery-item {
     width: 400px;
     height: 500px;
@@ -864,7 +864,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Адаптив для мобильных */
 @media (max-width: 768px) {
     .gallery-scroll-wrapper {
         padding: 20px;
