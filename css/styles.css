@@ -7,6 +7,7 @@
     --text: #1a1a1a;
     --text-secondary: #666666;
     --white: #ffffff;
+    --dark-blue; #09275F;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -521,7 +522,7 @@ section {
 
 /* Footer */
 footer {
-    background: var(--text);
+    background: var(--dark-blue);
     color: white;
     padding: 80px 40px 40px;
 }
