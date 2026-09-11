@@ -416,7 +416,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .program-card {
@@ -522,7 +522,7 @@ section {
 
 /* Footer */
 footer {
-    background: #09275F;
+    background: #1a2530;
     color: white;
     padding: 80px 40px 40px;
 }
