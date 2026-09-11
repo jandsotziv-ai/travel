@@ -893,3 +893,87 @@ footer {
         height: 400px;
     }
 }
+
+
+/* --- Стили для Dropdown меню --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    padding-right: 5px; /* Место для стрелочки */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    border: 1px solid var(--gray-medium);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.dropdown-menu a::after {
+    display: none; /* Убираем подчеркивание из основного меню */
+}
+
+.dropdown-menu a:hover {
+    background: var(--gray-light);
+    color: var(--primary);
+    padding-left: 24px; /* Эффект сдвига при наведении */
+}
+
+/* Показываем меню при наведении на родительский элемент */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Адаптив для мобильных (упрощенный вариант) */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 20px;
+        display: none; /* Скрыто по умолчанию на мобильном */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: #f9f9f9;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding: 8px 0;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 10px;
+        background: transparent;
+    }
+}
