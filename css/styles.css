@@ -373,8 +373,8 @@ section {
 }
 
 .region-title {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--primary);
