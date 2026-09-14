@@ -338,7 +338,7 @@ nav a:hover::after {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, transform 0.2s;
-    z-index: 100;
+    z-index: 9999;
     max-width: 220px;
     border: 1px solid #eee;
     transform: translateY(10px);
@@ -361,7 +361,7 @@ nav a:hover::after {
 }
 
 .map-tooltip p {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 12px;
     line-height: 1.4;
     margin: 0;
