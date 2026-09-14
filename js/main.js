@@ -1,49 +1,52 @@
-// Ждем полной загрузки страницы
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Логика тултипов карты ---
+    console.log('Скрипт запущен!'); // Проверка 1: должно появиться в консоли
+
+    // --- 1. Логика Тултипов (Карта) ---
     const points = document.querySelectorAll('.map-point');
     const tooltip = document.getElementById('mapTooltip');
     
-    if (tooltip && points.length > 0) {
+    // Проверяем, есть ли вообще точки и тултип на странице
+    if (points.length > 0 && tooltip) {
+        console.log(`Найдено точек: ${points.length}`); // Проверка 2
+        
         const titleEl = document.getElementById('tooltipTitle');
         const textEl = document.getElementById('tooltipText');
 
-        points.forEach(point => {
-            point.addEventListener('mouseenter', (e) => {
-                const location = point.getAttribute('data-location');
-                const program = point.getAttribute('data-program');
-                const date = point.getAttribute('data-date');
-
-                if (!location) return;
-
-                titleEl.textContent = location;
-                textEl.textContent = program + ' • ' + date;
-
-                tooltip.classList.add('active');
+        points.forEach((point, index) => {
+            // Вешаем событие наведения
+            point.addEventListener('mouseenter', function() {
+                console.log(`Наведение на точку ${index + 1}`); // Проверка 3: должно быть при наведении
                 
-                const rect = point.getBoundingClientRect();
-                tooltip.style.left = (rect.left + window.scrollX) + 'px';
-                tooltip.style.top = (rect.top + window.scrollY - 10) + 'px';
+                const location = this.getAttribute('data-location');
+                const program = this.getAttribute('data-program');
+                const date = this.getAttribute('data-date');
+
+                if (titleEl && textEl) {
+                    titleEl.textContent = location || '';
+                    textEl.textContent = program ? `${program} • ${date}` : date;
+                    
+                    // Показываем
+                    tooltip.classList.add('active');
+                    
+                    // Позиционируем
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.left = (rect.left + window.scrollX) + 'px';
+                    tooltip.style.top = (rect.top + window.scrollY - 10) + 'px'; // Чуть выше точки
+                }
             });
 
+            // Вешаем событие ухода мыши
             point.addEventListener('mouseleave', () => {
                 tooltip.classList.remove('active');
             });
-            
-            point.addEventListener('mousemove', (e) => {
-                if (tooltip.classList.contains('active')) {
-                    const rect = point.getBoundingClientRect();
-                    tooltip.style.left = (rect.left + window.scrollX) + 'px';
-                    tooltip.style.top = (rect.top + window.scrollY - 10) + 'px';
-                }
-            });
         });
+    } else {
+        if(points.length === 0) console.warn('Не найдено элементов .map-point');
+        if(!tooltip) console.error('Не найден элемент #mapTooltip');
     }
 
-    // --- 2. Логика горизонтальной галереи (Drag & Drop) ---
+    // --- 2. Логика Галереи (Скролл) ---
     const slider = document.querySelector('.gallery-scroll-wrapper');
-    
     if (slider) {
         let isDown = false;
         let startX;
@@ -52,23 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
-            slider.style.cursor = 'grabbing';
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-            slider.style.cursor = 'grab';
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-            slider.style.cursor = 'grab';
-        });
-
+        slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('active'); });
+        slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('active'); });
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
@@ -77,18 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.scrollLeft = scrollLeft - walk;
         });
         
-        // Кнопки навигации галереи
+        // Кнопки навигации (если есть)
         const prevBtn = document.getElementById('galleryPrev');
         const nextBtn = document.getElementById('galleryNext');
-        const scrollAmount = 400;
-
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
-            nextBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
+        if(prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => slider.scrollBy({ left: -400, behavior: 'smooth' }));
+            nextBtn.addEventListener('click', () => slider.scrollBy({ left: 400, behavior: 'smooth' }));
         }
     }
 
@@ -103,18 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     reveals.forEach(el => revealObserver.observe(el));
-});
 
-// --- 4. Эффект хедера при скролле (вне DOMContentLoaded для надежности) ---
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (header) {
-        if (window.pageYOffset > 50) {
-            header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.background = 'rgba(255, 255, 255, 0.85)';
+    // --- 4. Эффект шапки ---
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.boxShadow = window.pageYOffset > 50 ? '0 4px 30px rgba(0,0,0,0.08)' : 'none';
         }
-    }
+    });
 });
