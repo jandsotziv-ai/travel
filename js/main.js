@@ -1,39 +1,33 @@
 // Map tooltips
-const mapPoints = document.querySelectorAll('.map-point');
-const tooltip = document.getElementById('mapTooltip');
-const tooltipTitle = document.getElementById('tooltipTitle');
-const tooltipText = document.getElementById('tooltipText');
-const hero = document.getElementById('hero');
+document.addEventListener('DOMContentLoaded', () => {
+    const points = document.querySelectorAll('.map-point');
+    const tooltip = document.getElementById('mapTooltip');
+    const tooltipTitle = document.getElementById('tooltipTitle');
+    const tooltipDesc = document.getElementById('tooltipDesc');
 
-if (mapPoints.length > 0 && tooltip) {
-    mapPoints.forEach(point => {
-        point.addEventListener('mouseenter', (e) => {
-            const rect = point.getBoundingClientRect();
-            const heroRect = hero.getBoundingClientRect();
+    if (tooltip && points.length > 0) {
+        points.forEach(point => {
+            point.addEventListener('mouseenter', (e) => {
+                const location = point.getAttribute('data-location');
+                const program = point.getAttribute('data-program');
+                const date = point.getAttribute('data-date');
 
-            tooltipTitle.textContent = point.dataset.location;
-            tooltipText.textContent = `${point.dataset.program} — ${point.dataset.date}`;
+                tooltipTitle.textContent = location;
+                tooltipDesc.textContent = `${program}\n${date}`;
 
-            // Position tooltip above the point
-            let left = rect.left - heroRect.left + rect.width / 2 - tooltip.offsetWidth / 2;
-            let top = rect.top - heroRect.top - tooltip.offsetHeight - 12;
+                tooltip.classList.add('active');
+                
+                const rect = point.getBoundingClientRect();
+                tooltip.style.left = (rect.left + window.scrollX) + 'px';
+                tooltip.style.top = (rect.top + window.scrollY) + 'px';
+            });
 
-            // Keep within bounds
-            if (left < 10) left = 10;
-            if (left + tooltip.offsetWidth > heroRect.width - 10) left = heroRect.width - tooltip.offsetWidth - 10;
-            if (top < 10) top = rect.top - heroRect.top + rect.height + 12;
-
-            tooltip.style.left = left + 'px';
-            tooltip.style.top = top + 'px';
-            tooltip.classList.add('active');
+            point.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('active');
+            });
         });
-
-        point.addEventListener('mouseleave', () => {
-            tooltip.classList.remove('active');
-        });
-    });
-}
-
+    }
+});
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
