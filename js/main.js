@@ -97,3 +97,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Мобильное меню
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-phone');
+
+if (menuBtn && mobileOverlay) {
+    // Открытие/закрытие по клику на бургер
+    menuBtn.addEventListener('click', () => {
+        mobileOverlay.classList.toggle('active');
+        document.body.classList.toggle('body-lock');
+        // Небольшая задержка для анимации затемнения
+        setTimeout(() => {
+            document.body.classList.toggle('menu-open');
+        }, 10);
+    });
+
+    // Закрытие при клике на ссылку
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileOverlay.classList.remove('active');
+            document.body.classList.remove('body-lock', 'menu-open');
+        });
+    });
+    
+    // Закрытие при клике на затемненный фон (если нужно доработать CSS для клика по фону)
+    // Но пока оставим просто закрытие по ссылкам для надежности
+}
