@@ -334,28 +334,29 @@ nav a:hover::after {
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     font-size: 13px;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, transform 0.2s;
-    z-index: 9999;
+    z-index: 1000; /* Очень высокий индекс, чтобы был поверх всего */
     max-width: 220px;
     border: 1px solid #eee;
+    
+    /* Логика скрытия/показа */
+    opacity: 0;
     transform: translateY(10px);
-    left: 0;
-    top: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    
+    /* Важно: чтобы сквозь тултип можно было кликать (если нужно) и он не блокировал события */
+    pointer-events: none; 
 }
 
+/* Класс, который JS добавляет при наведении */
 .map-tooltip.active {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(-50px); /* Всплывает чуть выше точки */
+    transform: translateY(-45px); /* Сдвигаем чуть выше точки */
 }
 
 .map-tooltip h4 {
     font-size: 14px;
     margin: 0 0 4px;
-    color: var(--primary); /* Ваш красный цвет #ce1531 */
+    color: var(--primary);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -365,7 +366,7 @@ nav a:hover::after {
     font-size: 12px;
     line-height: 1.4;
     margin: 0;
-    white-space: pre-line; /* Чтобы перенос строки работал */
+    white-space: pre-line; /* Чтобы перенос строки \n работал */
 }
 
 /* Section Common */
