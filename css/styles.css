@@ -183,13 +183,14 @@ nav a:hover::after {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 1; /* Должно быть меньше, чем у точек (100) */
     background: linear-gradient(90deg, 
         rgba(255,255,255,0.97) 0%, 
         rgba(255,255,255,0.92) 30%, 
         rgba(255,255,255,0.75) 45%, 
         rgba(255,255,255,0.4) 60%,
         transparent 75%);
+    pointer-events: none; /* Важно: чтобы оверлей не перехватывал мышь */
 }
 
 .hero-content {
@@ -277,8 +278,8 @@ nav a:hover::after {
 .hero-points {
     position: absolute;
     inset: 0;
-    z-index: 1;
-    pointer-events: none;
+    z-index: 100; /* Поднимаем точки очень высоко */
+    pointer-events: none; /* Пропускаем клики сквозь контейнер, но... */
 }
 
 .map-point {
@@ -286,8 +287,9 @@ nav a:hover::after {
     display: flex;
     align-items: center;
     gap: 8px;
-    pointer-events: auto;
+    pointer-events: auto; /* ...возвращаем клики самим точкам */
     cursor: pointer;
+    z-index: 101; /* Каждая точка тоже должна быть высокой */
     opacity: 0;
     animation: pointFadeIn 0.5s ease forwards;
 }
