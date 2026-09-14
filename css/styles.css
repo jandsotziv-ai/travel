@@ -255,42 +255,6 @@ nav a:hover::after {
     opacity: 1;
 }
 
-/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
-@media (max-width: 900px) {
-    .header-inner {
-        padding: 0 20px;
-        height: 70px;
-    }
-
-    /* Скрываем обычное меню и тексты телефонов */
-    .desktop-nav, 
-    .phone-links span {
-        display: none;
-    }
-
-    /* Показываем кнопку бургера */
-    .mobile-menu-btn {
-        display: block;
-        margin-left: 15px;
-    }
-
-    /* Оставляем только иконки телефонов */
-    .phone-links {
-        gap: 15px;
-    }
-    
-    .phone-item svg {
-        width: 22px;
-        height: 22px;
-        stroke: var(--primary);
-    }
-
-    /* Уменьшаем логотип если нужно */
-    .logo-img {
-        height: 35px;
-    }
-}
-
 /* Hero */
 .hero {
     position: relative;
@@ -792,15 +756,43 @@ footer {
         gap: 40px;
     }
 }
+/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 0 20px;
+        height: 70px;
+    }
 
-@media (max-width: 768px) {
-    nav {
+    /* Скрываем обычное меню и тексты телефонов */
+    .desktop-nav, 
+    .phone-links span {
         display: none;
     }
-    
+
+    /* Показываем кнопку бургера */
     .mobile-menu-btn {
         display: block;
+        margin-left: 15px;
     }
+
+    /* Оставляем только иконки телефонов */
+    .phone-links {
+        gap: 15px;
+    }
+    
+    .phone-item svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--primary);
+    }
+
+    /* Уменьшаем логотип если нужно */
+    .logo-img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
     
     .hero h1 {
         font-size: 36px;
