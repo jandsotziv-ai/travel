@@ -150,12 +150,145 @@ nav a:hover::after {
     height: 20px;
 }
 
+/* --- Мобильное меню и адаптив --- */
+
+/* Скрываем кнопку бургера на ПК */
 .mobile-menu-btn {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 5px;
+}
+
+/* Контейнер для телефонов, чтобы не слипались */
+.phone-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.phone-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.phone-item:hover {
+    color: var(--primary);
+}
+
+.phone-item svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Выезжающее меню (скрыто по умолчанию) */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Спрятано справа */
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 2000;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    padding: 80px 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-overlay.active {
+    right: 0; /* Выезжает */
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mobile-link {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.mobile-phones {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.mobile-phone {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Затемнение фона при открытом меню */
+.body-lock {
+    overflow: hidden;
+}
+.body-lock::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.body-lock.menu-open::after {
+    opacity: 1;
+}
+
+/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    /* Скрываем обычное меню и тексты телефонов */
+    .desktop-nav, 
+    .phone-links span {
+        display: none;
+    }
+
+    /* Показываем кнопку бургера */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: 15px;
+    }
+
+    /* Оставляем только иконки телефонов */
+    .phone-links {
+        gap: 15px;
+    }
+    
+    .phone-item svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--primary);
+    }
+
+    /* Уменьшаем логотип если нужно */
+    .logo-img {
+        height: 35px;
+    }
 }
 
 /* Hero */
