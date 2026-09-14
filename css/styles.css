@@ -348,21 +348,24 @@ nav a:hover::after {
 
 .map-tooltip.active {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
+    transform: translateY(-50px); /* Всплывает чуть выше точки */
 }
 
 .map-tooltip h4 {
     font-size: 14px;
-    margin-bottom: 6px;
-    color: var(--primary);
-    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--primary); /* Ваш красный цвет #ce1531 */
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .map-tooltip p {
-    color: var(--text-secondary);
+    color: #666;
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 1.4;
     margin: 0;
+    white-space: pre-line; /* Чтобы перенос строки работал */
 }
 
 /* Section Common */
