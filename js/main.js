@@ -2,31 +2,51 @@
 document.addEventListener('DOMContentLoaded', () => {
     const points = document.querySelectorAll('.map-point');
     const tooltip = document.getElementById('mapTooltip');
-    const tooltipTitle = document.getElementById('tooltipTitle');
-    const tooltipDesc = document.getElementById('tooltipDesc');
+    
+    // Проверяем, существуют ли элементы, чтобы избежать ошибок
+    if (!tooltip || points.length === 0) return;
 
-    if (tooltip && points.length > 0) {
-        points.forEach(point => {
-            point.addEventListener('mouseenter', (e) => {
-                const location = point.getAttribute('data-location');
-                const program = point.getAttribute('data-program');
-                const date = point.getAttribute('data-date');
+    const titleEl = document.getElementById('tooltipTitle');
+    const textEl = document.getElementById('tooltipText');
 
-                tooltipTitle.textContent = location;
-                tooltipDesc.textContent = `${program}\n${date}`;
+    points.forEach(point => {
+        point.addEventListener('mouseenter', (e) => {
+            // Берем данные из атрибутов
+            const location = point.getAttribute('data-location');
+            const program = point.getAttribute('data-program');
+            const date = point.getAttribute('data-date');
 
-                tooltip.classList.add('active');
-                
+            if (!location) return; // Если данных нет, не показываем
+
+            // Заполняем текст
+            titleEl.textContent = location;
+            textEl.textContent = program + '\n' + date;
+
+            // Показываем тултип
+            tooltip.classList.add('active');
+
+            // Вычисляем позицию
+            // Используем getBoundingClientRect для точной позиции относительно экрана
+            const rect = point.getBoundingClientRect();
+            
+            // Позиционируем абсолютно относительно документа
+            tooltip.style.left = (rect.left + window.scrollX) + 'px';
+            tooltip.style.top = (rect.top + window.scrollY) + 'px';
+        });
+
+        point.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('active');
+        });
+        
+        // Дополнительно: обновление позиции при скролле, если тултип открыт
+        point.addEventListener('mousemove', (e) => {
+             if (tooltip.classList.contains('active')) {
                 const rect = point.getBoundingClientRect();
                 tooltip.style.left = (rect.left + window.scrollX) + 'px';
                 tooltip.style.top = (rect.top + window.scrollY) + 'px';
-            });
-
-            point.addEventListener('mouseleave', () => {
-                tooltip.classList.remove('active');
-            });
+             }
         });
-    }
+    });
 });
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
