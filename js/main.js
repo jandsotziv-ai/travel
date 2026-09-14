@@ -104,4 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const walk = (x - startX) * 2; // Скорость скролла
             slider.scrollLeft = scrollLeft - walk;
         });
-    }
+        
+    // Остальной код (анимация при скролле и т.д.) можно оставить ниже, если он там есть
+    const reveals = document.querySelectorAll('.reveal');
+    // ... (ваш существующий код для reveal)
+});
