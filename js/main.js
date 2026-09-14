@@ -98,30 +98,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Мобильное меню
+// --- Логика мобильного меню ---
 const menuBtn = document.getElementById('mobileMenuBtn');
-const mobileOverlay = document.getElementById('mobileOverlay');
-const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-phone');
+const nav = document.getElementById('main-nav');
+const body = document.body;
 
-if (menuBtn && mobileOverlay) {
-    // Открытие/закрытие по клику на бургер
+if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
-        mobileOverlay.classList.toggle('active');
-        document.body.classList.toggle('body-lock');
-        // Небольшая задержка для анимации затемнения
-        setTimeout(() => {
-            document.body.classList.toggle('menu-open');
-        }, 10);
+        // Переключаем класс active у меню и кнопки
+        nav.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        
+        // Блокируем прокрутку страницы, когда меню открыто
+        if (nav.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
     });
 
-    // Закрытие при клике на ссылку
-    mobileLinks.forEach(link => {
+    // Закрываем меню при клике на любую ссылку внутри него
+    const navLinks = nav.querySelectorAll('a, .dropdown-toggle');
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileOverlay.classList.remove('active');
-            document.body.classList.remove('body-lock', 'menu-open');
+            nav.classList.remove('active');
+            menuBtn.classList.remove('active');
+            body.style.overflow = '';
         });
     });
-    
-    // Закрытие при клике на затемненный фон (если нужно доработать CSS для клика по фону)
-    // Но пока оставим просто закрытие по ссылкам для надежности
 }
