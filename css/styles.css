@@ -265,7 +265,9 @@ nav a:hover::after {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(206, 21, 49, 0.35);
 }
-
+.hero-mascot {
+    display: none; 
+}
 /* Map Points */
 .hero-points {
     position: absolute;
@@ -912,13 +914,12 @@ footer {
         margin-bottom: 25px;
         padding: 0 10px;
     }
-}
 
-    /* 3. Стили для маскота (скрыт на ПК, виден на мобильном) */
+        /* 3. Стили для маскота (скрыт на ПК, виден на мобильном) */
     .hero-mascot {
-        display: none; /* Скрыт по умолчанию */
+        display: block;
         position: absolute;
-        bottom: -20px; /* Чуть ниже контента или у края экрана */
+        bottom: -40px; /* Чуть ниже контента или у края экрана */
         right: 0;
         width: 250px; /* Размер маскота */
         height: auto;
@@ -935,6 +936,9 @@ footer {
         opacity: 0; 
         transform: translateY(20px);
     }
+}
+
+
 
 /* Действия в хедере (телефоны) */
 .header-actions {
