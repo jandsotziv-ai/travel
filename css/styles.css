@@ -934,6 +934,7 @@ footer {
         right: 5%;
         z-index: 1;
         pointer-events: none; 
+        bottom: 0px;
     }
     .hero {
         min-height: 100vh;
