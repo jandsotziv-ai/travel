@@ -873,7 +873,7 @@ footer {
 .gallery-item:hover .gallery-overlay span {
     transform: translateY(0);
 }
-
+/* --- Адаптив главного экрана для мобильных --- */
 @media (max-width: 768px) {
     .gallery-scroll-wrapper {
         padding: 20px;
@@ -887,6 +887,48 @@ footer {
     }
     .gallery-item.tall {
         height: 400px;
+    }
+    /* 1. Скрываем точки на карте */
+    .hero-points {
+        display: none;
+    }
+
+    /* 2. Поднимаем контент выше к меню */
+    .hero-content {
+        padding-top: 100px; /* Было 140px, теперь ближе к верху */
+        padding-bottom: 60px;
+        text-align: center; /* Центрируем текст для красоты */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-inner {
+        max-width: 100%; /* Чтобы текст занимал всю ширину */
+        position: relative; /* Чтобы позиционировать маскота относительно текста */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    /* 3. Стили для маскота */
+    .hero-mascot {
+        display: block;
+        width: 160px; /* Размер картинки */
+        height: auto;
+        position: absolute;
+        bottom: -20px; /* Чуть выезжает вниз за пределы блока */
+        right: 0;      /* Прижат вправо */
+        z-index: 10;   /* Поверх фона, но под текстом если что */
+        pointer-events: none; /* Чтобы нельзя было кликнуть/перетащить */
     }
 }
 
