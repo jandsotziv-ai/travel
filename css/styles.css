@@ -922,7 +922,8 @@ footer {
     }
 
     .btn {
-        display: none;
+        position: relative;
+        z-index: 5;
     }
 
     .hero-mascot { 
@@ -930,7 +931,7 @@ footer {
         width: 250px;
         height: auto; 
         position: absolute;
-        bottom: -50px;
+        padding-top: -5px;
         right: 5%;
         z-index: 1;
         pointer-events: none; 
