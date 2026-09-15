@@ -340,13 +340,9 @@ nav a:hover::after {
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     font-size: 13px;
-    z-index: 1000;
+    z-index: 1000; /* Очень высокий индекс, чтобы был поверх всего */
     max-width: 220px;
     border: 1px solid #eee;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none;
 }
 
 .map-tooltip.active {
@@ -367,7 +363,7 @@ nav a:hover::after {
     font-size: 12px;
     line-height: 1.4;
     margin: 0;
-    white-space: pre-line;
+    white-space: pre-line; /* Чтобы перенос строки \n работал */
 }
 
 .hero-content {
