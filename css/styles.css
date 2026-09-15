@@ -937,11 +937,6 @@ footer {
         z-index: 1;
         pointer-events: none; 
     }
-    
-    .hero {
-        min-height: 100vh;
-        overflow: visible;
-    }
 
 }
 
