@@ -150,7 +150,7 @@ nav a:hover::after {
     height: 20px;
 }
 
-/* --- Мобильное меню и адаптив --- */
+/* --- Новое выпадающее мобильное меню --- */
 
 /* Скрываем кнопку бургера на ПК */
 .mobile-menu-btn {
@@ -159,100 +159,125 @@ nav a:hover::after {
     border: none;
     cursor: pointer;
     padding: 5px;
+    color: var(--text);
 }
 
-/* Контейнер для телефонов, чтобы не слипались */
+/* Контейнер телефонов */
 .phone-links {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-.phone-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.phone-item:hover {
-    color: var(--primary);
-}
-
-.phone-item svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* Выезжающее меню (скрыто по умолчанию) */
-.mobile-overlay {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Спрятано справа */
+/* Скрываем само выпадающее меню на ПК */
+.mobile-dropdown {
+    display: none;
+    position: absolute;
+    top: 80px; /* Высота хедера */
+    left: 0;
     width: 100%;
-    max-width: 300px;
-    height: 100vh;
     background: white;
-    z-index: 2000;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
-    padding: 80px 30px 30px;
-    display: flex;
-    flex-direction: column;
+    border-bottom: 1px solid var(--gray-medium);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    z-index: 999;
+    overflow: hidden;
+    max-height: 0; /* Скрыто по высоте */
+    transition: max-height 0.4s ease-in-out;
 }
 
-.mobile-overlay.active {
-    right: 0; /* Выезжает */
+/* Класс для открытия меню */
+.mobile-dropdown.active {
+    max-height: 500px; /* Достаточно большая высота */
 }
 
 .mobile-menu-content {
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .mobile-link {
     text-decoration: none;
     color: var(--text);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
+    padding: 5px 0;
+    display: block;
+}
+
+.mobile-group-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.sub-link {
+    padding-left: 15px;
+    font-size: 16px;
+    color: var(--text-secondary);
 }
 
 .mobile-phones {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border-top: 1px solid #eee;
+    margin-top: 10px;
     padding-top: 20px;
+    border-top: 1px solid var(--gray-light);
 }
 
 .mobile-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: var(--primary);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 
-/* Затемнение фона при открытом меню */
-.body-lock {
-    overflow: hidden;
+.mobile-phone svg {
+    width: 20px;
+    height: 20px;
 }
-.body-lock::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 1999;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.body-lock.menu-open::after {
-    opacity: 1;
+
+/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    /* Скрываем обычное меню и тексты телефонов */
+    .desktop-nav, 
+    .phone-links span {
+        display: none;
+    }
+
+    /* Показываем кнопку бургера */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: 15px;
+    }
+
+    /* Оставляем только иконки телефонов */
+    .phone-links {
+        gap: 15px;
+    }
+    
+    .phone-item svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--primary);
+    }
+
+    .logo-img {
+        height: 35px;
+    }
 }
 
 /* Hero */
@@ -1116,28 +1141,3 @@ footer {
     }
 }
 
-/* =========================================
-   ИСПРАВЛЕНИЕ МОБИЛЬНОГО МЕНЮ
-   Добавь это в самый конец файла styles.css
-   ========================================= */
-
-@media (max-width: 900px) {
-    /* 1. Принудительно показываем само меню, если оно есть в HTML */
-    .mobile-overlay {
-        display: flex; 
-        /* Оно все еще спрятано за right: -100%, но теперь браузер его "видит" */
-    }
-
-    /* 2. Исправляем затемнение фона (body-lock) */
-    .body-lock::after {
-        display: block; /* Важно! Без этого псевдоэлемент не рендерится */
-        width: 100%;
-        height: 100%;
-    }
-    
-    /* 3. Убеждаемся, что при открытии меню оно выезжает */
-    .mobile-overlay.active {
-        right: 0;
-        display: flex;
-    }
-}
