@@ -913,16 +913,26 @@ footer {
         padding: 0 10px;
     }
 
-    /* 3. Стили для маскота */
+    /* 3. Стили для маскота (скрыт на ПК, виден на мобильном) */
     .hero-mascot {
-        display: block;
-        width: 250px; /* Размер картинки */
-        height: auto;
+        display: none; /* Скрыт по умолчанию */
         position: absolute;
-        bottom: -40px; /* Чуть выезжает вниз за пределы блока */
-        right: 0;      /* Прижат вправо */
-        z-index: 10;   /* Поверх фона, но под текстом если что */
-        pointer-events: none; /* Чтобы нельзя было кликнуть/перетащить */
+        bottom: -20px; /* Чуть ниже контента или у края экрана */
+        right: 0;
+        width: 140px; /* Размер маскота */
+        height: auto;
+        z-index: 5;
+        pointer-events: none; /* Чтобы сквозь него можно было кликать, если нужно */
+    }
+
+    .hero-mascot img {
+        width: 100%;
+        height: auto;
+        display: block;
+        /* Можно добавить легкую анимацию появления, если хочешь */
+        animation: fadeInUp 0.8s ease 0.5s forwards; 
+        opacity: 0; 
+        transform: translateY(20px);
     }
 }
 
