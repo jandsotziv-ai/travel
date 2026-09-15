@@ -150,136 +150,6 @@ nav a:hover::after {
     height: 20px;
 }
 
-/* --- Новое выпадающее мобильное меню --- */
-
-/* Скрываем кнопку бургера на ПК */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    color: var(--text);
-}
-
-/* Контейнер телефонов */
-.phone-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-/* Скрываем само выпадающее меню на ПК */
-.mobile-dropdown {
-    display: none;
-    position: absolute;
-    top: 80px; /* Высота хедера */
-    left: 0;
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid var(--gray-medium);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    z-index: 999;
-    overflow: hidden;
-    max-height: 0; /* Скрыто по высоте */
-    transition: max-height 0.4s ease-in-out;
-}
-
-/* Класс для открытия меню */
-.mobile-dropdown.active {
-    max-height: 500px; /* Достаточно большая высота */
-}
-
-.mobile-menu-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.mobile-link {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 18px;
-    font-weight: 600;
-    padding: 5px 0;
-    display: block;
-}
-
-.mobile-group-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    font-weight: 700;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.sub-link {
-    padding-left: 15px;
-    font-size: 16px;
-    color: var(--text-secondary);
-}
-
-.mobile-phones {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-    padding-top: 20px;
-    border-top: 1px solid var(--gray-light);
-}
-
-.mobile-phone {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--primary);
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.mobile-phone svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
-@media (max-width: 900px) {
-    .header-inner {
-        padding: 0 20px;
-        height: 70px;
-    }
-
-    /* Скрываем обычное меню и тексты телефонов */
-    .desktop-nav, 
-    .phone-links span {
-        display: none;
-    }
-
-    /* Показываем кнопку бургера */
-    .mobile-menu-btn {
-        display: block;
-        margin-left: 15px;
-    }
-
-    /* Оставляем только иконки телефонов */
-    .phone-links {
-        gap: 15px;
-    }
-    
-    .phone-item svg {
-        width: 22px;
-        height: 22px;
-        stroke: var(--primary);
-    }
-
-    .logo-img {
-        height: 35px;
-    }
-}
-
 /* Hero */
 .hero {
     position: relative;
@@ -781,41 +651,6 @@ footer {
         gap: 40px;
     }
 }
-/* АДАПТИВ ДЛЯ МОБИЛЬНЫХ (экраны меньше 900px) */
-@media (max-width: 900px) {
-    .header-inner {
-        padding: 0 20px;
-        height: 70px;
-    }
-
-    /* Скрываем обычное меню и тексты телефонов */
-    .desktop-nav, 
-    .phone-links span {
-        display: none;
-    }
-
-    /* Показываем кнопку бургера */
-    .mobile-menu-btn {
-        display: block;
-        margin-left: 15px;
-    }
-
-    /* Оставляем только иконки телефонов */
-    .phone-links {
-        gap: 15px;
-    }
-    
-    .phone-item svg {
-        width: 22px;
-        height: 22px;
-        stroke: var(--primary);
-    }
-
-    /* Уменьшаем логотип если нужно */
-    .logo-img {
-        height: 35px;
-    }
-}
 
 @media (max-width: 768px) {
     
@@ -860,8 +695,6 @@ footer {
         justify-content: center;
     }
 }
-
-
 
 
 
@@ -1058,58 +891,105 @@ footer {
 }
 
 
-/* --- Стили для Dropdown меню --- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+/* --- Мобильное меню (Выпадающий список) --- */
 
-.dropdown-toggle {
+/* Кнопка бургера скрыта на ПК */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
     cursor: pointer;
-    padding-right: 5px; /* Место для стрелочки */
+    padding: 5px;
+    color: var(--text);
 }
 
-.dropdown-menu {
+/* Выпадающий блок - скрыт по умолчанию */
+.mobile-dropdown {
+    display: none; /* Скрыто на ПК */
     position: absolute;
-    top: 100%;
+    top: 80px; /* Высота хедера */
     left: 0;
+    width: 100%;
     background: white;
-    min-width: 200px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    padding: 10px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1001;
-    border: 1px solid var(--gray-medium);
+    border-bottom: 1px solid var(--gray-medium);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    z-index: 999;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.dropdown-menu a {
-    display: block;
-    padding: 10px 20px;
-    color: var(--text-secondary);
+/* Класс для открытия меню */
+.mobile-dropdown.active {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav-list a {
     text-decoration: none;
-    font-size: 14px;
-    transition: var(--transition);
-    position: relative;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 0;
 }
 
-.dropdown-menu a::after {
-    display: none; /* Убираем подчеркивание из основного меню */
+.mobile-phones-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gray-light);
 }
 
-.dropdown-menu a:hover {
-    background: var(--gray-light);
+.mobile-phones-list a {
+    text-decoration: none;
     color: var(--primary);
-    padding-left: 24px; /* Эффект сдвига при наведении */
+    font-size: 16px;
+    font-weight: 700;
 }
 
-/* Показываем меню при наведении на родительский элемент */
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+/* АДАПТИВ (экраны меньше 900px) */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 0 20px;
+        height: 70px;
+    }
 
+    /* Скрываем обычное меню и тексты телефонов */
+    .desktop-nav, 
+    .phone-links span {
+        display: none;
+    }
+
+    /* Показываем кнопку бургера */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: 15px;
+    }
+
+    /* Оставляем только иконки телефонов в хедере */
+    .phone-links {
+        gap: 15px;
+    }
+    
+    .phone-item svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--primary);
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+}
