@@ -891,17 +891,23 @@ footer {
 
     /* 2. Поднимаем контент выше к меню */
     .hero-content {
-        padding-top: 80px; /* Было 140px, теперь ближе к верху */
+        padding-top: 20px; /* Было 140px, теперь ближе к верху */
         padding-bottom: 20px;
-        text-align: center; /* Центрируем текст для красоты */
+        text-align: left; /* Центрируем текст для красоты */
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
+        position: relative;
+        z-index: 2;
     }
 
     .hero-inner {
-        max-width: 100%; /* Чтобы текст занимал всю ширину */
-        position: relative; /* Чтобы позиционировать маскота относительно текста */
+        position: relative; 
+        max-width: 100%; 
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero h1 {
@@ -915,27 +921,28 @@ footer {
         padding: 0 10px;
     }
 
-        /* 3. Стили для маскота (скрыт на ПК, виден на мобильном) */
-    .hero-mascot {
-        display: block;
-        position: absolute;
-        bottom: -40px; /* Чуть ниже контента или у края экрана */
-        right: 0;
-        width: 250px; /* Размер маскота */
-        height: auto;
+    .btn {
+        position: relative;
         z-index: 5;
-        pointer-events: none; /* Чтобы сквозь него можно было кликать, если нужно */
+        margin-bottom: 20px;
     }
 
-    .hero-mascot img {
-        width: 100%;
-        height: auto;
-        display: block;
-        /* Можно добавить легкую анимацию появления, если хочешь */
-        animation: fadeInUp 0.8s ease 0.5s forwards; 
-        opacity: 0; 
-        transform: translateY(20px);
+    .hero-mascot { 
+        display: block; 
+        width: 140px;
+        height: auto; 
+        position: absolute;
+        bottom: -10px;
+        right: 5%;
+        z-index: 1;
+        pointer-events: none; 
     }
+    
+    .hero {
+        min-height: 100vh;
+        overflow: visible;
+    }
+
 }
 
 
