@@ -652,35 +652,6 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    
-    .hero h1 {
-        font-size: 36px;
-    }
-    
-    .section-header h2 {
-        font-size: 32px;
-    }
-    
-    section {
-        padding: 80px 20px;
-    }
-    
-    .programs-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 200px;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
 @media (max-width: 480px) {
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -875,6 +846,29 @@ footer {
 }
 /* --- Адаптив главного экрана для мобильных --- */
 @media (max-width: 768px) {
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    section {
+        padding: 80px 20px;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
     .gallery-scroll-wrapper {
         padding: 20px;
     }
