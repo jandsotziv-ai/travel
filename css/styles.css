@@ -912,6 +912,7 @@ footer {
         margin-bottom: 25px;
         padding: 0 10px;
     }
+}
 
     /* 3. Стили для маскота (скрыт на ПК, виден на мобильном) */
     .hero-mascot {
@@ -919,7 +920,7 @@ footer {
         position: absolute;
         bottom: -20px; /* Чуть ниже контента или у края экрана */
         right: 0;
-        width: 140px; /* Размер маскота */
+        width: 250px; /* Размер маскота */
         height: auto;
         z-index: 5;
         pointer-events: none; /* Чтобы сквозь него можно было кликать, если нужно */
@@ -934,8 +935,6 @@ footer {
         opacity: 0; 
         transform: translateY(20px);
     }
-}
-
 
 /* Действия в хедере (телефоны) */
 .header-actions {
