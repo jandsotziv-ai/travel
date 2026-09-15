@@ -1113,31 +1113,3 @@ footer {
     transform: translateY(0);
 }
 
-/* Адаптив для мобильных (упрощенный вариант) */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding-left: 20px;
-        display: none; /* Скрыто по умолчанию на мобильном */
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        background: #f9f9f9;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-menu a {
-        padding: 8px 0;
-    }
-    
-    .dropdown-menu a:hover {
-        padding-left: 10px;
-        background: transparent;
-    }
-}
-
