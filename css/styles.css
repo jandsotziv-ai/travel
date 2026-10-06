@@ -288,13 +288,15 @@ nav a:hover::after {
     animation: pointFadeIn 0.5s ease forwards;
 }
 
-.map-point:nth-child(1) { animation-delay: 0.5s; }
-.map-point:nth-child(2) { animation-delay: 0.6s; }
-.map-point:nth-child(3) { animation-delay: 0.7s; }
-.map-point:nth-child(4) { animation-delay: 0.8s; }
-.map-point:nth-child(5) { animation-delay: 0.9s; }
-.map-point:nth-child(6) { animation-delay: 1.0s; }
-.map-point:nth-child(7) { animation-delay: 1.1s; }
+.map-point:nth-child(1) { animation-delay: 0.3s; }
+.map-point:nth-child(2) { animation-delay: 0.4s; }
+.map-point:nth-child(3) { animation-delay: 0.5s; }
+.map-point:nth-child(4) { animation-delay: 0.6s; }
+.map-point:nth-child(5) { animation-delay: 0.7s; }
+.map-point:nth-child(6) { animation-delay: 0.8s; }
+.map-point:nth-child(7) { animation-delay: 0.9s; }
+.map-point:nth-child(8) { animation-delay: 1.0s; }
+.map-point:nth-child(9) { animation-delay: 1.1s; }
 
 @keyframes pointFadeIn {
     to { opacity: 1; }
