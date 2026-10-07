@@ -165,7 +165,7 @@
                             </div>
                         </div>
                         <div class="program-price"> от 2600 USD</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Экскурсионная поездка «Сеульские каникулы»">Узнать подробности</a>
                     </div>
                 </div>
                 
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 1795 USD</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Языковой лагерь в ОАЭ">Узнать подробности</a>
                      </div>
                 </div>
             </div>
@@ -197,7 +197,7 @@
               <div class="programs-grid">
                 <div class="program-card">
                     <div class="program-image" style="background-image: url('images/photo-serbia.jpg');">
-                        <span class="program-badge">Новинка</span>
+                        <span class="program-badge">Новое</span>
                     </div>
                     <div class="program-content">
                         <h3>Экскурсионная поездка в Сербию</h3>
@@ -216,7 +216,7 @@
                             </div>
                         </div>
                         <div class="program-price"> от 120 000 ₽</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Экскурсионная поездка в Сербию">Узнать подробности</a>
                     </div>
                 </div>
                 
@@ -241,7 +241,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 45 000 ₽</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Экскурсионная поездка в Казахстан + сдача международного экзамена">Узнать подробности</a>
                      </div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 16 289 ¥</div>
-                        <a href="#" class="program-btn">Узнать подробнее</a>
+                        <a href="#" class="program-btn" data-program="Языковой лагерь «Маленький император» в Китае">Узнать подробнее</a>
                     </div>
                 </div>
                 
@@ -292,7 +292,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 1800 €</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Языковой лагерь в Турции">Узнать подробности</a>
                      </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                             </div>
                         </div>
                         <div class="program-price">СКОРО</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Образовательная поездка в Великобританию">Узнать подробности</a>
                     </div>
                 </div>
                 
@@ -345,7 +345,7 @@
                             </div>
                         </div>
                         <div class="program-price">СКОРО</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Поездка в Боровое">Узнать подробности</a>
                     </div>
                 </div>
             </div>
@@ -379,7 +379,7 @@
                             </div>
                         </div>
                         <div class="program-price">5 700 ₽</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Туры выходного дня">Узнать подробности</a>
                     </div>
                 </div>
                 
@@ -403,7 +403,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 75 000 ₽</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Языковой лагерь в Горном Алтае">Узнать подробности</a>
                     </div>
                 </div>
                 
@@ -428,7 +428,7 @@
                             </div>
                         </div>
                         <div class="program-price">от 68 000 ₽</div>
-                        <a href="#" class="program-btn">Узнать подробности</a>
+                        <a href="#" class="program-btn" data-program="Загородная школа с изучением иностранных языков">Узнать подробности</a>
                     </div>
                 </div>
            </div>
@@ -631,7 +631,26 @@
             </div>
         </div>
     </footer>
-
+    <!-- Модальное окно заявки -->
+<div class="modal-overlay" id="programModal">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+        <h3 id="modalTitle">Название программы</h3>
+        <p class="modal-subtitle">Оставьте ваши контактные данные и получите инфолист с подробностями по программе</p>
+        <form class="about-form modal-form" id="modalForm">
+            <input type="text" name="name" placeholder="Ф.И." required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <input type="email" name="email" placeholder="Почта" required>
+            <label class="checkbox-label">
+                <input type="checkbox" required>
+                <span>Даю согласие на обработку персональных данных в соответствии с <a href="#" target="_blank">Политикой конфиденциальности</a>.</span>
+            </label>
+            <button type="submit" class="btn form-btn">Отправить</button>
+        </form>
+    </div>
+</div>
+    
     <script src="js/main.js"></script>
+
 </body>
 </html>
