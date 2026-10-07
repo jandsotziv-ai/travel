@@ -1199,7 +1199,8 @@ footer {
 
 /* Форма во всю ширину снизу */
 .about-form-wrap {
-    max-width: 700px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -1207,14 +1208,26 @@ footer {
     background: var(--gray-light);
     padding: 40px;
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .form-intro {
     font-size: 15px;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     line-height: 1.6;
     text-align: center;
+}
+
+/* Ряд полей в одну строку */
+.form-fields-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .about-form input[type="text"],
@@ -1226,7 +1239,6 @@ footer {
     border-radius: 10px;
     font-size: 15px;
     font-family: inherit;
-    margin-bottom: 14px;
     background: white;
     transition: border-color 0.3s;
 }
@@ -1262,8 +1274,10 @@ footer {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
-    width: 100%;
+    padding: 14px 40px;
     justify-content: center;
+    width: auto;
+    margin-left: auto;
 }
 
 /* Адаптив для блока О нас */
@@ -1292,6 +1306,14 @@ footer {
     
     .about-form {
         padding: 25px;
+    }
+     .form-fields-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-btn {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
