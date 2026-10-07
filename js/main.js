@@ -125,3 +125,38 @@ if (menuBtn && mobileDropdown) {
         });
     });
 }
+
+// ================= МОДАЛЬНОЕ ОКНО ЗАЯВКИ =================
+const modal = document.getElementById('programModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalClose = document.getElementById('modalClose');
+const programButtons = document.querySelectorAll('.program-btn');
+
+if (modal && programButtons.length > 0) {
+    programButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const programName = btn.getAttribute('data-program') || 'Наша программа';
+            modalTitle.textContent = programName;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+
+    // Закрытие кликом по затемнению
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Закрытие клавишей Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+}
