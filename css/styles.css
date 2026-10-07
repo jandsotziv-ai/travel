@@ -1197,37 +1197,61 @@ footer {
     font-weight: 500;
 }
 
-/* Форма во всю ширину снизу */
+/* Форма внизу, в две колонки */
 .about-form-wrap {
     width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.about-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-intro {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.form-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.form-cta:hover {
+    gap: 18px;
+    color: var(--primary-dark);
+}
+
+.form-cta svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.form-cta:hover svg {
+    transform: translateX(4px);
 }
 
 .about-form {
     background: var(--gray-light);
     padding: 40px;
     border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.form-intro {
-    font-size: 15px;
-    color: var(--text-secondary);
-    margin-bottom: 25px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* Ряд полей в одну строку */
-.form-fields-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) auto;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
 .about-form input[type="text"],
@@ -1239,6 +1263,7 @@ footer {
     border-radius: 10px;
     font-size: 15px;
     font-family: inherit;
+    margin-bottom: 14px;
     background: white;
     transition: border-color 0.3s;
 }
@@ -1274,10 +1299,8 @@ footer {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
-    padding: 14px 40px;
+    width: 100%;
     justify-content: center;
-    width: auto;
-    margin-left: auto;
 }
 
 /* Адаптив для блока О нас */
@@ -1304,16 +1327,17 @@ footer {
         font-size: 13px;
     }
     
-    .about-form {
-        padding: 25px;
-    }
-     .form-fields-row {
+    .about-form-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
     
-    .form-btn {
-        width: 100%;
-        margin-left: 0;
+    .form-cta {
+        font-size: 20px;
+    }
+    
+    .about-form {
+        padding: 25px;
     }
 }
 
