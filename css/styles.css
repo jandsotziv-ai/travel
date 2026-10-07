@@ -1127,3 +1127,167 @@ footer {
         display: block;
     }
 }
+
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.about-text > p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Форма */
+.about-form {
+    background: var(--gray-light);
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.form-intro {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-form input[type="text"],
+.about-form input[type="tel"],
+.about-form input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    margin-bottom: 14px;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.about-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+
+.checkbox-label a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.form-btn {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Цифры на цветном фоне */
+.stats-bar {
+    background: var(--primary);
+    border-radius: 24px;
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+.stat-label {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Адаптив для блока О нас */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .stats-bar {
+        padding: 40px 20px;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-bar {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .about-text h2 {
+        font-size: 32px;
+    }
+    
+    .about-form {
+        padding: 20px;
+    }
+}
