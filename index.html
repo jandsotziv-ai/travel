@@ -468,10 +468,20 @@
         </div>
     </div>
 
-    <!-- Форма внизу, во всю ширину -->
-    <div class="about-form-wrap reveal">
-        <form class="about-form" id="contactForm">
+    <!-- Форма внизу, в две колонки -->
+<div class="about-form-wrap reveal">
+    <div class="about-form-grid">
+
+        <!-- Левая колонка: текст + призыв -->
+        <div class="form-left">
             <p class="form-intro">Кроме групповых поездок мы предлагаем услуги индивидуального сопровождения, а также консультирование и помощь с поступлением на образовательные программы за рубежом.</p>
+            <a href="#contactForm" class="form-cta">Оставь заявку на консультацию
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+
+        <!-- Правая колонка: форма -->
+        <form class="about-form" id="contactForm">
             <input type="text" name="name" placeholder="Ф.И." required>
             <input type="tel" name="phone" placeholder="Телефон" required>
             <input type="email" name="email" placeholder="Почта" required>
@@ -481,7 +491,10 @@
             </label>
             <button type="submit" class="btn form-btn">Отправить</button>
         </form>
+
     </div>
+</div>
+    
 </section>
 
     <!-- Галерея -->
