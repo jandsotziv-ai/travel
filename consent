@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности — JandS</title>
+    <meta name="description" content="Политика конфиденциальности (условия обработки информации о пользователях) ООО «Джей энд Эс»">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+            <img src="images/logo-moa.png" alt="JandS Logo" class="logo-img">
+        </a>
+
+        <!-- Основное меню (видимо только на ПК) -->
+        <nav id="main-nav" class="desktop-nav">
+            <div class="dropdown">
+                <a href="index.html#programs" class="dropdown-toggle">Поездки ▾</a>
+                <div class="dropdown-menu">
+                    <a href="index.html#russia">По России</a>
+                    <a href="index.html#abroad">За рубеж</a>
+                </div>
+            </div>
+            <a href="index.html#about">О нас</a>
+            <a href="index.html#gallery">Фото</a>
+            <a href="index.html#footer">Контакты</a>
+        </nav>
+
+        <!-- Правая часть: Телефоны + Бургер -->
+        <div class="header-actions">
+            <div class="phone-links">
+                <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank" class="phone-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <span>8 (960) 794-59-69</span>
+                </a>
+                <a href="tel:+73812972440" class="phone-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>8 (3812) 972-440</span>
+                </a>
+            </div>
+
+            <!-- Кнопка Бургер -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- ВЫПАДАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+        <nav class="mobile-nav-list">
+            <a href="index.html#russia">По России</a>
+            <a href="index.html#abroad">За рубеж</a>
+            <a href="index.html#about">О нас</a>
+            <a href="index.html#gallery">Фото</a>
+            <a href="index.html#footer">Контакты</a>
+        </nav>
+        <div class="mobile-phones-list">
+            <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank">8 (960) 794-59-69</a>
+            <a href="tel:+73812972440">8 (3812) 972-440</a>
+        </div>
+    </div>
+</header>
+
+<!-- Заголовок страницы -->
+<section class="legal-hero">
+    <h1>Согласие посетителя сайта на обработку персональных данных</h1>
+    <p>Условия обработки информации о пользователях · Приложение 1 к приказу от 30.01.2026 г. № ПД-1</p>
+</section>
+
+<main class="legal-wrap">
+
+1.  Настоящим выражаю свое согласие на автоматизированную и неавтоматизированную обработку, а также обработку смешанным способом моих персональных данных, переданных мною лично ООО «Джей энд Эс» (ОГРН 1055504087055; ИНН 5503090793; 644007, Омская область, г. Омск, ул. Фрунзе, д. 80, офис 623_8), далее – Оператор, заполняемых в форме сбора (заявке, анкете и т.д.), под которой размещена ссылка на настоящее Согласие (далее по тексту-Форма), на сайте jands-travel.ru в телекоммуникационной сети Интернет (далее Сайт). (далее по тексту также — «Общество») действует в отношении информации и данных, которую Общество может получить о Пользователе в отношении обработки персональных данных (далее по тексту также — «Политика»), определяет позицию и намерения Общества в области обработки и защиты персональных данных, с целью соблюдения и защиты прав и свобод каждого человека и, в особенности, права на неприкосновенность частной жизни, личную и семейную тайну, защиту своей чести и доброго имени.</li>
+2.	Я проинформирован(а), Оператор вправе осуществлять обработку моих персональных данных следующими способами: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), использование, передача (распространение, предоставление, доступ), обезличивание, блокирование, уничтожение, в соответствии с Политикой конфиденциальности Оператора в отношении обработки персональных данных.
+3.	Оператор, осуществлять обработку моих персональных данных в целях предоставление мне обратной связи по результатам заполнения Формы, а также направление мне информационных материалов, на получение которых дано настоящее Согласие путем заполнения Формы, в том числе:  
+    <ol>
+        <li>в целях обслуживания клиентов, выполнения заказов, предоставления ответов на запросы клиентов, заключения договоров и их исполнения;</li>
+        <li>в целях информирования о сервисах «Джей энд Эс»;</li>
+        <li>в целях сбора информации о потребителях сервисов маркированных товарных знаком «Джей энд Эс» на Сайте, мнении потребителей о сервисах, в частности об их качестве;</li>
+        <li>в целях информирования и участия в рекламных и иных мероприятиях, проводимых и/или организуемых Оператором посредством Cайта;</li>
+        <li>в целях обеспечение соблюдения законов и иных нормативных правовых актов в области персональных данных.</li>
+    </ol>
+4.	Согласие вступает в силу с момента передачи моих персональных данных Оператору посредством заполнения форм на Сайте и действует до достижения целей обработки или даты его отзыва путём направления письменного заявления в адрес Оператора в соответствии с Политикой конфиденциальности Оператора в отношении обработки персональных данных. 
+5.	Настоящее согласие может быть отозвано письменным заявлением на e-mail: call-center@jands.ru либо письменным уведомлением по адресу регистрации ООО «Джей энд Эс» (644007, Омская область, г. Омск, ул. Фрунзе, д. 80, офис 623_8)
+
+</main>
+
+<footer id="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="images/logo-moa.png" alt="JandS Logo" class="logo-img">
+                </a>
+                <p>Международное образовательное агентство. Организация образовательных и экскурсионных поездок по России и зарубежным странам.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Направления</h4>
+                <a href="index.html#russia">По России</a>
+                <a href="index.html#abroad">За рубежом</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="https://jands.ru/company/about-us">О компании JandS</a>
+                <a href="privacy-policy.html">Политика конфиденциальности</a>
+                <a href="consent.html">Согласие на обработку персональных данных</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+73812972440">+7 (3812) 972-440</a>
+                <a href="tel:+79607945969">+7 (960) 794-59-69</a>
+                <a href="mailto:center@jands.ru">center@jands.ru</a>
+                <a href="#">г. Омск, ул. Фрунзе, 80; офис 623; каб. 8</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 JandS. Все права защищены.</span>
+            <div class="footer-social">
+                <a href="https://vk.ru/jands_company" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+                <a href="https://t.me/bsonlinejands" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank" aria-label="Max"><i class="fa-brands fa-discourse"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
