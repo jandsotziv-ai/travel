@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies — JandS</title>
+    <meta name="description" content="Обработки файлов-cookies ООО «Джей энд Эс»">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+            <img src="images/logo-moa.png" alt="JandS Logo" class="logo-img">
+        </a>
+
+        <!-- Основное меню (видимо только на ПК) -->
+        <nav id="main-nav" class="desktop-nav">
+            <div class="dropdown">
+                <a href="index.html#programs" class="dropdown-toggle">Поездки ▾</a>
+                <div class="dropdown-menu">
+                    <a href="index.html#russia">По России</a>
+                    <a href="index.html#abroad">За рубеж</a>
+                </div>
+            </div>
+            <a href="index.html#about">О нас</a>
+            <a href="index.html#gallery">Фото</a>
+            <a href="index.html#footer">Контакты</a>
+        </nav>
+
+        <!-- Правая часть: Телефоны + Бургер -->
+        <div class="header-actions">
+            <div class="phone-links">
+                <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank" class="phone-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <span>8 (960) 794-59-69</span>
+                </a>
+                <a href="tel:+73812972440" class="phone-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>8 (3812) 972-440</span>
+                </a>
+            </div>
+
+            <!-- Кнопка Бургер -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- ВЫПАДАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+        <nav class="mobile-nav-list">
+            <a href="index.html#russia">По России</a>
+            <a href="index.html#abroad">За рубеж</a>
+            <a href="index.html#about">О нас</a>
+            <a href="index.html#gallery">Фото</a>
+            <a href="index.html#footer">Контакты</a>
+        </nav>
+        <div class="mobile-phones-list">
+            <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank">8 (960) 794-59-69</a>
+            <a href="tel:+73812972440">8 (3812) 972-440</a>
+        </div>
+    </div>
+</header>
+
+<!-- Заголовок страницы -->
+<section class="legal-hero">
+    <h1>Cookies</h1>
+</section>
+
+<main class="legal-wrap">
+
+<h2 id="s1">Что такое cookie?</h2>
+<p>Cookies (файлы cookie) - это небольшой фрагмент данных, отправленный веб-сервером и хранимый на вашем устройстве. Каждый раз при попытке открыть страницу соответствующего сайта браузер пересылает этот фрагмент данных серверу в составе HTTP-запроса.</p>
+<h2 id="s1">Как мы используем файлы cookie?</h2>
+<p>Цель использования файлов cookie заключается в том, чтобы сайт запомнил ваши предпочтения (местоположение, язык и т.д.). Это исключает необходимость повторно вводить их при очередном посещении сайта.</p>
+<p>Также файлы cookie используются для ведения анонимной статистики о посещаемости сайтов и позволяют нам и нашим партнерам показывать вам релевантную рекламу при посещении нашего сайта и других сторонних сайтов, включая социальные сети.</p>
+<p>Большинство современных браузеров позволяет выбрать — принимать обработку файлов cookie или нет, но их отключение влияет на корректность работы с сайтом.</p>
+<h2 id="s1">Как мы обрабатываем файлы cookie?</h2>
+<p>Сервер использует файл cookie клиента, чтобы просмотреть связанные сведения из кэша. Это делается для управления сессиями на сайте и персонализации сервисов, в том числе, с использованием метрических программ и систем аналитики, таких как Яндекс.Метрика.</p>
+<h2 id="s1">Какие виды файлов cookie мы используем?</h2>
+             <table>
+                <thead><tr><th style="width:30%">Категория</th><th>Описание и цель использования</th></tr></thead>
+                <tbody>
+                    <tr><td>Технические cookies</td><td>Эти cookies необходимы для работы веб-сайтов и онлайн-сервисов Общества, без них они не могут надлежащим образом функционировать. Технические cookies позволяют пользователям перемещаться по таким сайтам и сервисам, просматривать их различные разделы, заполнять формы и прожимать там чекбоксы</td></tr>
+                    <tr><td>Аналитические cookies</td><td>Эти cookies собирают информацию о том, как часто пользователи посещают веб-сайты и онлайн-сервисы Общества, какие разделы просматривают, на какие ссылки нажимают и как в целом перемещаются по таким сайтам и сервисам</td></tr>
+                    <tr><td>Cookies предпочтений</td><td>Эти cookies запоминают настройки и выборы, которые пользователи делают на веб-сайтах и в онлайн-сервисах Общества (язык, регион, поисковые запросы и т.д.) и тем самым обеспечивают получение пользователями персонализированного опыта при использовании таких сайтов и сервисов</td></tr>
+                    <tr><td>Маркетинговые cookies</td><td>Эти cookies собирают информацию о действиях, совершаемых пользователями как на веб-сайтах и в онлайн-сервисах Общества, так и на сайтах третьих лиц, чтобы показывать наиболее актуальную для пользователей рекламу, оценивать эффективность такой рекламы и ограничивать количество рекламных показов</td></tr>
+                </tbody>
+            </table>
+<p>Использование cookie, не преследует цели идентифицировать конкретного пользователя веб-сайтов и онлайн-сервисов. Срок хранения файлов cookie зависит от конкретного типа и/или периода необходимого для достижения целей обработки персональных данных, но в любом случае не превышает 6 месяцев с даты последнего посещения сайта. </p>  
+<h2 id="s1">Как отключить cookies?</h2>
+<p>Пользователи также могут самостоятельно ограничить или полностью отключить установку cookies через настройки своего веб-браузера. Однако без использования технических cookies веб-сайты и онлайн-сервисы Общества могут работать некорректно, а часть их функционала может оказаться недоступна.</p>  
+<h2 id="s1">Важно:</h2>  
+  <ul>
+        <li>Файлы cookie это НЕ вирус, они не заразят ваше устройство;</li>
+        <li>Файлы cookie НЕ могут повредить жесткий диск устройства;</li>
+        <li>Файлы cookie НЕ получают с вашего устройства ваши личные данные, они позволяют анализировать только вашу активность на сайте;</li>
+        <li>Файлы cookie НЕ тормозят работу сайта, наоборот, их отключение приведет к снижению скорости обработки ваших запросов</li>
+    </ul>
+
+<div class="legal-note" style="margin-top:48px">
+        <a href="privacy-policy.html">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ (УСЛОВИЯ ОБРАБОТКИ ИНФОРМАЦИИ О ПОЛЬЗОВАТЕЛЯХ) ООО «ДЖЕЙ ЭНД ЭС»</a>
+    </div>
+  
+</main>
+
+<footer id="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="images/logo-moa.png" alt="JandS Logo" class="logo-img">
+                </a>
+                <p>Международное образовательное агентство. Организация образовательных и экскурсионных поездок по России и зарубежным странам.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Направления</h4>
+                <a href="index.html#russia">По России</a>
+                <a href="index.html#abroad">За рубежом</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="https://jands.ru/company/about-us">О компании JandS</a>
+                <a href="privacy-policy.html">Политика конфиденциальности</a>
+                <a href="consent.html">Согласие на обработку персональных данных</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+73812972440">+7 (3812) 972-440</a>
+                <a href="tel:+79607945969">+7 (960) 794-59-69</a>
+                <a href="mailto:center@jands.ru">center@jands.ru</a>
+                <a href="#">г. Омск, ул. Фрунзе, 80; офис 623; каб. 8</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 JandS. Все права защищены.</span>
+            <div class="footer-social">
+                <a href="https://vk.ru/jands_company" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+                <a href="https://t.me/bsonlinejands" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOLJr9gKtMShBZuas1bvFodrhYaRHnI1CAOMtPouTnkn40tb8WU" target="_blank" aria-label="Max"><i class="fa-brands fa-discourse"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
